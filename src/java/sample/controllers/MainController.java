@@ -7,62 +7,36 @@ package sample.controllers;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import sample.user.UserDAO;
-import sample.user.UserDTO;
 
 /**
  *
  * @author THAI
  */
-@WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
-public class LoginController extends HttpServlet {
-
-    private static final String ERROR = "login.jsp";
-    private static final String AD = "AD";
-    private static final String ADMIN_PAGE = "admin.jsp";
-    private static final String ST = "ST";
-    private static final String STUDENT_PAGE = "student.jsp";
-    private static final String RE = "RE";
-    private static final String RECRUITER_PAGE = "recruiter.jsp";
+public class MainController extends HttpServlet {
+    private static final String ERROR = "error.jsp";
+    private static final String LOGIN = "LoginController";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String url = ERROR;
         try {
-            String userID = request.getParameter("userID");
-            String password = request.getParameter("password");
-            UserDAO dao = new UserDAO();
-            UserDTO loginUser = dao.checkLogin(userID, password);
-            if (loginUser != null) {
-                String roleID = loginUser.getRoleID();
+            String action = request.getParameter("action");
+            if("Login".equals(action)){
+                url = LOGIN;
+            }else{
                 HttpSession session = request.getSession();
-                if (AD.equals(roleID)) {
-                    session.setAttribute("LOGIN_USER", loginUser);
-                    url = ADMIN_PAGE;
-                } else if (ST.equals(roleID)) {
-                    session.setAttribute("LOGIN_USER", loginUser);//1 session va 2 request
-                    url = STUDENT_PAGE;
-                } else if (RE.equals(roleID)) {
-                    session.setAttribute("LOGIN_USER", loginUser);//1 session va 2 request
-                    url = RECRUITER_PAGE;
-                } else {
-                    request.setAttribute("ERROR_MESSAGE", "Your role is not support");//còn param user role action
-                    //tạo Attribute ở Requesst cope
-                }
-
-            } else {
-                request.setAttribute("ERROR_MESSAGE", "Incorrect userID or password");//3c param atribute 
+                session.setAttribute("ERROR_MESSAGE", "Function is not availble");
             }
         } catch (Exception e) {
-            log("Error at LoginController:" + e.toString());
-        } finally {
+            log("Error at MainController" + e.toString());
+        }finally{
             request.getRequestDispatcher(url).forward(request, response);
+
         }
     }
 
