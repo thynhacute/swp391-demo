@@ -17,7 +17,7 @@
             UserDTO loginUser = (UserDTO) session.getAttribute("LOGIN_USER");
             if (loginUser != null) {
         %>
-        <h1>Hello Recruiter: <%= loginUser.getUserName()%></h1>
+        <h1>Hello Recruiter: <%= loginUser.getFullName()%></h1>
         <%
             }
         %>

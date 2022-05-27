@@ -408,5 +408,3 @@ $(document).ready(() => {
 });
 
 // End custom global js
-
-

@@ -10,7 +10,7 @@ package sample.user;
  */
 public class UserDTO {
      private String userID;
-     private String userName;
+     private String fullName;
      private String roleID;
      private String password;
      
@@ -19,9 +19,9 @@ public class UserDTO {
         
     }
 
-    public UserDTO(String userID, String userName, String roleID, String password) {
+    public UserDTO(String userID, String fullName, String roleID, String password) {
         this.userID = userID;
-        this.userName = userName;
+        this.fullName = fullName;
         this.roleID = roleID;
         this.password = password;
     }
@@ -34,12 +34,12 @@ public class UserDTO {
         this.userID = userID;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getRoleID() {
@@ -57,7 +57,5 @@ public class UserDTO {
     public void setPassword(String password) {
         this.password = password;
     }
-     
-     
-     
+    
 }

@@ -18,10 +18,10 @@ import sample.utils.DBUtils;
  */
 public class UserDAO {
 
-    private static final String LOGIN = "SELECT userName, roleID FROM tblUsers WHERE userID=? AND password=?";
+    private static final String LOGIN = "SELECT fullName, roleID FROM tblUsers WHERE userID=? AND password=?";
        private static final String SEARCH = "SELECT userID, userName, roleID FROM tblUsers WHERE userName like ?";
 
-    public UserDTO checkLogin(String userID, String password) throws SQLException {
+        public UserDTO checkLogin(String userID, String password) throws SQLException {
         UserDTO user = null;
         Connection conn = null;
         PreparedStatement ptm = null;
@@ -35,9 +35,9 @@ public class UserDAO {
                 ptm.setString(2, password);
                 rs = ptm.executeQuery();
                 if (rs.next()) {
-                    String userName = rs.getString("username");
+                    String fullName = rs.getString("fullName");
                     String roleID = rs.getString("roleID");
-                    user = new UserDTO(userID, userName, roleID, "");
+                    user = new UserDTO(userID, fullName, roleID, "");
                 }
             }
 
@@ -69,10 +69,10 @@ public class UserDAO {
                 rs = ptm.executeQuery();
                 while (rs.next()) {
                     String userID = rs.getString("userID");
-                    String userName = rs.getString("fullName");
+                    String fullName = rs.getString("fullName");
                     String roleID = rs.getString("roleID");
                     String password = "***";
-                    listUser.add(new UserDTO(userID, userName, roleID, password));
+                    listUser.add(new UserDTO(userID, fullName, roleID, password));
                 }
             }
         } catch (Exception e) {

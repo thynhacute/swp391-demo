@@ -1,11 +1,3 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : May 20, 2022, 2:16:08 PM
-    Author     : THAI
-*/
 body {
 	font-family: 'Roboto', sans-serif;
 }
@@ -92,4 +84,3 @@ table.dataTable img {
 	border: 1px solid red !important;
 	box-shadow: 0rem 0rem 0.5rem red !important;
 }
-
