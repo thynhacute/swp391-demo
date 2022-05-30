@@ -1,0 +1,67 @@
+.background {
+    background-image: url(/image/FPT.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav-link {
+    color: whitesmoke;
+}
+
+.nav-link:hover {
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 10%;
+}
+
+.logo {
+    background: whitesmoke;
+    border-radius: 5%;
+}
+
+.navbar {
+    background-color: #F27229;
+}
+
+.slogan {
+    text-align: center;
+    color: black;
+    margin-top: 5px;
+}
+
+.container {
+    margin-top: 5px;
+}
+
+.sort {
+    display: inline-flex;
+}
+
+.logo1 {
+    text-align: center;
+}
+
+.logocty img {
+    width: 100px;
+    margin-top: 2rem;
+    display: inline-flex;
+}
+
+.cty {
+    display: inline-flex;
+    border: 1px black outset;
+    background-color: #F7F7F7;
+}
+
+.description p {
+    margin-bottom: 0%;
+}
+
+.col-5 {
+    margin-bottom: 5rem;
+}
+
+.advertisement img {
+    width: 30rem;
+    margin-bottom: 50px;
+}
