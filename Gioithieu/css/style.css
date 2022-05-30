@@ -1,0 +1,31 @@
+body {
+    background-image: url(/image/FPT.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.nav-link {
+    color: whitesmoke;
+}
+
+.nav-link:hover {
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 10%;
+}
+
+
+/* .navbar {
+    background-color: #F27229;
+}
+
+.logo {
+    background: whitesmoke;
+    border-radius: 5%;
+} */
+
+.slogan {
+    text-align: center;
+    color: black;
+    margin-top: 5px;
+}
